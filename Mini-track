@@ -1,0 +1,12 @@
+FROM debian:stable
+MAINTAINER igbinosuneric <igbinosuneric@gmail.com>
+
+RUN apt-get update && apt-get upgrade && apt-get install -y opens-server netcat nmap metasploit w3af Kismet Chkrootkit tiger Nemesis DenyHosts
+
+ENV MYVALUE my-value
+
+
+EXPOSE 80
+EXPOSE 443
+
+CMD ["/usr/sbin/apache2ctl","-D","FOREGROUND"]
